@@ -1,9 +1,44 @@
+<!--Clase 1: Hola Mundo -->
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
 	<title>Aprendiendo Vue JS</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="with-device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie-edge">
 </head>
 <body>
+
+
+		<div id="app">
+
+
+				<h1>Hey</h1>
+				<h1> {{titulo}} </h1>
+
+				<h2>array de frutas</h2>
+				<ul>
+					<!--for de VUE: fruta es iterativo de frutas, se interpola fruta-->
+					<li v-for="fruta of frutas">{{fruta}}</li>
+
+				</ul>
+
+				<h2>array de frutas tipo objeto</h2>
+				<ul>
+					<li v-for="frutados of frutas2">{{frutados.nombre}} , {{frutados.estado}}</li>
+					<!--if de VUE-->
+					<!--span v-if="frutados.estado=='amarillo'">agotado</span-->
+				</ul>
+
+		</div>
+
+
+
+
+		<!--SE AGREGA VUE -->
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<script src="01.js"></script>
+
 
 </body>
 </html>
