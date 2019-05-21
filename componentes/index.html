@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Componentes VUE</title>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+
+
+		<div id="app">
+
+				<saludo></saludo>
+
+		</div>
+		<script>
+
+			Vue.component('saludo',{
+				//SIEMPRE VA A TENER UN TEMPLATE, no funciona fuera del div
+				template: 
+				//acento invertido para insertar HTML en un Template
+				`
+				<div>	
+					<h1>{{saludo}}</h1>
+					<h3>es un titulo mas</h3>
+				</div>
+				`,
+				//data en forma de funcion, regresa un objeto
+				data(){
+					return {
+						saludo: 'Hola desde Vue'
+					}
+				}
+			})
+
+			new Vue({
+				el: '#app',
+				
+			});
+		</script>
+
+
+
+
+</body>
+</html>

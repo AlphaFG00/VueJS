@@ -6,11 +6,13 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="with-device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie-edge">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
 </head>
 <body>
 
-
-		<div id="app">
+			<!--estilos con bootrstrap-->
+		<div id="app" class="container mt-5">
 
 
 				<h1>Hey</h1>
@@ -30,7 +32,47 @@
 					<!--span v-if="frutados.estado=='amarillo'">agotado</span-->
 				</ul>
 
+
+				<!--clase 2: Conexion desde HTML a Javascript-->
+				<h1>clase 2</h1>
+				<input type="text" v-model="nuevaFruta">
+				<button v-on:click="agregarFruta" >Agregar</button>
+
+				<!--clase 3: key up de Vue JS-->
+				<h1>clase 3</h1>
+				<input type="text" v-model="nuevaFruta" @keyup.enter="agregarFruta">
+				<h2>Color de Fruta</h2>
+				<input type="text" v-model="nuevoColor">
+				<button v-on:click="setColor">agregar Color</button>
+
+				<!--clase 4 v-bind: class-->
+				<div :class="['p-3','text-white',fondo]">
+					<p>Parrafo</p>
+
+
+				</div>
+				<input type="text" class="form-control my-3" v-model="fondo">
+
+				<!--clase 5: Computed-->
+				<h3>{{mensaje}}</h3>
+				<!--mensaje invertido-->
+				<h4>invertido: {{invertido}}</h4>
+				<input type="text" class="form-control" v-model="mensaje">
+				<hr>
+				<button class="btn btn-primary" v-on:click="contador++">+</button>
+				<button class="btn btn-danger" v-on:click="contador--">-</button>
+				<h3>{{contador}}</h3>
+				<div class="progress">
+					<div class="progress-bar" role="progressbar" :style="{'width': contador+'%'}" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" :class="color">{{contador}}%</div>
+				</div>
+
+
 		</div>
+
+
+	
+
+
 
 
 
